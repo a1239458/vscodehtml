@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>範例RRR�</title>
+  <title>訂飲料</title>
   <!-- Bootstrap core CSS -->
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom styles for this template -->
@@ -41,32 +41,24 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h1 class="mt-5">哈嚕 我是鹹酥雞老闆</h1>
-        <p class="lead">請問你要吃蝦米勒!</p>
+        <h1 class="mt-5">訂飲料</h1>
+        <p class="lead">請問你要喝什麼?</p>
         <ul class="list-unstyled">
-          <li class="col-xs-6">
-            <img class="img-responsive" src="./img/鹹酥雞.jpg" alt="">
-            <h2>鹹酥雞</h2>
-            <p>NT.50</p>
-            <select name="number" class="select form-control" data-price="50" data-name="鹹酥雞">
-              <option style="display:none" value="">請選擇數量</option>
-              <option value="1">1份</option>
-              <option value="2">2份</option>
-              <option value="3">3份</option>
-            </select>
-          </li>
-          <li class="col-xs-6">
-            <img class="img-responsive" src="./img/由於.jpg" alt="">
-            <h2>魷魚</h2>
-            <p>NT.50</p>
-            <select name="number" class="select form-control" data-price="50" data-name="魷魚">
-              <option style="display:none" value="">請選擇數量</option>
-              <option value="1">1份</option>
-              <option value="2">2份</option>
-              <option value="3">3份</option>
-            </select>
-          </li>
-        </ul>
+          <li class="col-xs-6 ">
+            <img class="img-responsive" src="./img/可不可熟成紅茶20200707.jpg" alt="">
+        </li>
+        </ul>     
+        <div class="form-group col-xs-12">
+          <label for="pwd">請選擇甜度</label>
+          <select name="number" class="select form-control" data-name="甜度>
+            <option style="display:none" value=""></option>
+            <option value="">請選擇甜度</option>
+            <option value="全糖">全糖</option>
+            <option value="半糖">半糖</option>
+            <option value="微糖">微糖</option>
+            <option value="無糖">無糖</option>
+          </select>
+        </div>
         <div class="form-group col-xs-12">
           <label for="pwd">姓名:</label>
           <input type="text" class="form-control" id="name">
@@ -78,9 +70,10 @@
         <div class="form-group col-xs-12">
           <button type="button" id="sendOrder" class="btn btn-primary col-xs-12">送出訂單</button>
         </div>
-        <div contenteditable="col-xs-12 text-center">
-            <a href="https://docs.google.com/spreadsheets/d/1f010xDoXjDq5jQ6_L0FKqcaC2OVvkvNOv0Bx1yBprGQ/edit#gid=0" target="_blank">google表格連結</a></div>
-        <div class="col-xs-12 text-center">純屬線上訂購 demo</div>
+        <!-- <div contenteditable="col-xs-12 text-center">
+            <a href="https://docs.google.com/spreadsheets/d/1f010xDoXjDq5jQ6_L0FKqcaC2OVvkvNOv0Bx1yBprGQ/edit#gid=0" 
+            target="_blank">google表格連結</a></div> -->
+        <div class="col-xs-12 text-center">Test線上訂購</div>
       </div>
     </div>
   </div>
@@ -108,8 +101,8 @@
         // 處理價格 跟 訂單 資料
         $('.select').each(function(index) {
           if($(this).val() !== ''){
-            order += $(this).data('name') + ' - ' + $(this).val() + '份 \n';
-            price += Number($(this).data('price')) * Number($(this).val());
+            //order += $(this).data('name') + ' - ' + $(this).val() + '\n';
+            //price += Number($(this).data('price')) * Number($(this).val());
           }
         });
         order = order.substring(0, order.length - 1);
@@ -123,10 +116,10 @@
           $('#phone').css('border','1px solid #ff0000');
           status = false;
         }
-        if(order == ''){
+        /* if(order == ''){
           alert('請選擇訂購品項喔');
           status = false;
-        }
+        } */
         // 如果 �必填欄位都過了 才會到這邊
         if(status){
           // 增加日期資料
@@ -142,7 +135,8 @@
             'name' : name,
             'phone':phone,
             'time': filltime,
-            'order': order,
+            //'order': order,
+            'order': 'test',
             'price': price,
           }
           // 呼叫 send ajax function
