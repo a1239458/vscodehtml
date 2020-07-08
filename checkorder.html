@@ -101,7 +101,7 @@ $(function(){
 function handleData(response){
     var content = '';
     response.forEach(element => {
-      var [name, time, item, sugarlevel, icelevel, price, status] = element.data;
+      var [name, time, item, sugarlevel, icelevel, price, index, status] = element.data;
       var index = element.index;
       var statusWording = convertStatus(status);
       content +=
