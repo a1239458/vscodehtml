@@ -58,7 +58,7 @@
         </div> 
         <div class="form-group col-xs-12">
           <label for="pwd">請選擇甜度</label>
-          <select name="number" class="select form-control" data-name="甜度>
+          <select name="number" id="sugar" class="select form-control" data-name="甜度>
             <option style="display:none" value=""></option>
             <option value="">請選擇甜度</option>
             <option value="全糖">全糖</option>
@@ -69,7 +69,7 @@
         </div>
         <div class="form-group col-xs-12">
             <label for="pwd">請選擇冰塊</label>
-            <select name="number" class="select form-control" data-name="冰塊>
+            <select name="number" id="ice" class="select form-control" data-name="冰塊>
               <option style="display:none" value=""></option>
               <option value="">請選擇冰塊</option>
               <option value="正常冰">正常冰</option>
@@ -113,22 +113,17 @@
         });
         price = $('#price').val();
         // 處理甜度 跟 冰塊 資料
-        var sugarlevel = '';
-        if ($(this).data('name') == '甜度'){
-        $('.select').each(function(index) {
-          if($(this).val() !== ''){
-            sugarlevel = $(this).val();
-          }
-          });
-        }
-        var icelevel = '';
-        if ($(this).data('name') == '冰塊'){
+        var sugarlevel = document.getElementById("sugar").value;
+        
+        var icelevel = document.getElementById("ice").value;
+        /* if ($(this).data('name') == '冰塊'){
         $('.select').each(function(index) {
           if($(this).val() !== ''){
             icelevel = $(this).val();
           }
           });
-        }
+        } */
+
 
 
        // $('.select').each(function(index) {
@@ -144,6 +139,14 @@
         // 擋住不填資料邏輯
         if(name == ''){
           $('#name').css('border','1px solid #ff0000');
+          status = false;
+        }
+        if(price == 0){
+          $('#price').css('border','1px solid #ff0000');
+          status = false;
+        }
+        if(order == ''){
+          $('#order').css('border','1px solid #ff0000');
           status = false;
         }
         /*         if(phone == ''){
@@ -167,11 +170,11 @@
           // 打包 要的資料
           var data = {
             'time': filltime,
-            'name': '姓名',
-            'order': '烏龍茶',
-            'sugarlevel': '少糖',
-            'icelevel': '少冰',
-            'price': '40',
+            'name': name,
+            'order': order,
+            'sugarlevel': sugarlevel,
+            'icelevel': icelevel,
+            'price': price,
           }
           // 呼叫 send ajax function
           send(data);
