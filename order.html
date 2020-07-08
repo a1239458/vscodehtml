@@ -47,7 +47,15 @@
           <li class="col-xs-6 ">
             <img class="img-responsive" src="./img/可不可熟成紅茶20200707.jpg" alt="">
         </li>
-        </ul>     
+        </ul>
+        <div class="form-group col-xs-12">
+          <label for="pwd">餐點</label>
+          <input type="text" class="form-control" id="order">
+        </div> 
+        <div class="form-group col-xs-12">
+          <label for="pwd">價格</label>
+          <input type="text" class="form-control" id="price">
+        </div> 
         <div class="form-group col-xs-12">
           <label for="pwd">請選擇甜度</label>
           <select name="number" class="select form-control" data-name="甜度>
@@ -63,20 +71,16 @@
             <label for="pwd">請選擇冰塊</label>
             <select name="number" class="select form-control" data-name="冰塊>
               <option style="display:none" value=""></option>
-              <option value="">請選擇甜度</option>
-              <option value="全糖">全糖</option>
-              <option value="半糖">半糖</option>
-              <option value="微糖">微糖</option>
-              <option value="無糖">無糖</option>
+              <option value="">請選擇冰塊</option>
+              <option value="正常冰">正常冰</option>
+              <option value="少冰">少冰</option>
+              <option value="微冰">微冰</option>
+              <option value="去冰">去冰</option>
             </select>
           </div>
         <div class="form-group col-xs-12">
-          <label for="pwd">姓名:</label>
+          <label for="pwd">姓名</label>
           <input type="text" class="form-control" id="name">
-        </div>
-        <div class="form-group col-xs-12">
-          <label for="pwd">電話:</label>
-          <input type="number" class="form-control" id="phone">
         </div>
         <div class="form-group col-xs-12">
           <button type="button" id="sendOrder" class="btn btn-primary col-xs-12">送出訂單</button>
@@ -100,23 +104,41 @@
         var status = true;
         // 姓名
         var name = $('#name').val();
-        // 電話
-        var phone = $('#phone').val(); 
         // 訂單  後面再加上選項數量*價格
-        var order = '';
+        var order = $('#order').val();
         // 價格 先預設0 後面再加上
         var price = 0;
         $('input').focus(function(){
           $(this).css('border','');
         });
+        price = $('#price').val();
         // 處理甜度 跟 冰塊 資料
+        var sugarlevel = '';
+        if ($(this).data('name') == '甜度'){
         $('.select').each(function(index) {
           if($(this).val() !== ''){
-              order = $(this).val();
+            sugarlevel = $(this).val();
+          }
+          });
+        }
+        var icelevel = '';
+        if ($(this).data('name') == '冰塊'){
+        $('.select').each(function(index) {
+          if($(this).val() !== ''){
+            icelevel = $(this).val();
+          }
+          });
+        }
+
+
+       // $('.select').each(function(index) {
+        //  if($(this).val() !== ''){
+             // order = $(this).val();
             //order += $(this).data('name') + ' - ' + $(this).val() + '\n';
             //price += Number($(this).data('price')) * Number($(this).val());
-          }
-        });
+         // }
+        //});
+
         //order = order.substring(0, order.length - 1);
 
         // 擋住不填資料邏輯
@@ -124,10 +146,10 @@
           $('#name').css('border','1px solid #ff0000');
           status = false;
         }
-        if(phone == ''){
+        /*         if(phone == ''){
           $('#phone').css('border','1px solid #ff0000');
           status = false;
-        }
+        } */
         /* if(order == ''){
           alert('請選擇訂購品項喔');
           status = false;
@@ -144,12 +166,12 @@
                 + currentdate.getSeconds();
           // 打包 要的資料
           var data = {
-            'name' : name,
-            'phone':phone,
             'time': filltime,
-            'order': order,
-            //'order': 'test',
-            'price': price,
+            'name': '姓名',
+            'order': '烏龍茶',
+            'sugarlevel': '少糖',
+            'icelevel': '少冰',
+            'price': '40',
           }
           // 呼叫 send ajax function
           send(data);
