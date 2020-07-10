@@ -98,7 +98,7 @@
   <!-- Bootstrap core JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-  <script type="text/javascript" src="https://cdn.wootric.com/wootric-sdk.js"></script>
+  <script type="text/javascript" src="https://cdn.wootric.com/wootric-sdk.js"></script> 
 
   <script type="text/javascript">
     wootric_survey_immediately = true;
@@ -108,15 +108,21 @@
       created_at: 1234567890, 
       account_token: 'NPS-e29606d5',
       language: 'CN_T',
-      product_name: '飲料訂單'
-      ,event_name: 'drink'
-      /* ,properties : {
-       role : 'reporter',
-       plan : 'enterprise'
-      } */
+      product_name: '此飲料訂單'
     };
 
-    
+    window.customMessages = {
+      followup_questions_list: {
+          detractor_question: "可以告訴我怎麼選這麼低分嗎?",  //選1~2分標題
+          passive_question: "可以告訴我怎麼選普普的分數嗎?",      //選3分標題
+          promoter_question: "感謝您高抬貴手"     //選4~5分標題
+      },
+      placeholder_texts_list: {
+        detractor_text: "不要填太難聽的內容喔",//選1~2分浮水印
+        passive_text: "普通評論",    //選3分浮水印
+        promoter_text: "感謝您!"   //選4~5分浮水印
+      }
+  };
 
 
     console.log('wootricSettings:', window['wootricSettings']);
