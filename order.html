@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-tw">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,32 +14,37 @@
     body {
       padding-top: 54px;
     }
+
     .form-group {
       text-align: left;
-  }
-  img.img-responsive {
-    height: 100%;
-  }
+    }
+
+    img.img-responsive {
+      height: 100%;
+    }
+
     @media (min-width: 992px) {
       body {
         padding-top: 56px;
       }
     }
+
     @media (max-width: 980px) {
       img.img-responsive {
-          height: 250px;
-      }  
+        height: 250px;
+      }
     }
+
     @media (max-width: 480px) {
       img.img-responsive {
-          height: 100px;
+        height: 100px;
       }
     }
   </style>
-  
+
 <body>
   <!-- Page Content -->
-  
+
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
@@ -46,72 +52,74 @@
         <p class="lead">請問你要喝什麼?</p>
       </div>
       <div class="form-group col-xs-12">
-      <div style="display:flex;justify-content:center;max-width:100%">
-        <!-- <ul class="list-unstyled">
+        <div style="display:flex;justify-content:center;max-width:100%">
+          <!-- <ul class="list-unstyled">
           <li class="col-xs-6 ">
             <img class="img-responsive" src="./img/可不可熟成紅茶20200707.jpg" alt="">
         </li>
         </ul> -->
-        <img class="img-fluid"  src="./img/50嵐.jpg" alt="">
+          <img class="img-fluid" src="./img/50嵐.jpg" alt="">
+        </div>
       </div>
-    </div>
-        <div class="form-group col-xs-12">
-          <label for="pwd">餐點/尺寸</label>
-          <input type="text" class="form-control" id="order" placeholder="黃金烏龍/L">
-        </div> 
-        <div class="form-group col-xs-12">
-          <label for="pwd">價格</label>
-          <input type="text" class="form-control" id="price">
-        </div> 
-        <div class="form-group col-xs-12">
-          <label for="pwd">請選擇甜度</label>
-          <select name="number" id="sugar" class="select form-control" data-name="甜度>
-            <option style="display:none" value=""></option>
-            <option value="">請選擇甜度</option>
-            <option value="全糖">全糖</option>
-            <option value="半糖">半糖</option>
-            <option value="微糖">微糖</option>
-            <option value="無糖">無糖</option>
-          </select>
-        </div>
-        <div class="form-group col-xs-12">
-            <label for="pwd">請選擇冰塊</label>
-            <select name="number" id="ice" class="select form-control" data-name="冰塊>
-              <option style="display:none" value=""></option>
-              <option value="">請選擇冰塊</option>
-              <option value="正常冰">正常冰</option>
-              <option value="少冰">少冰</option>
-              <option value="微冰">微冰</option>
-              <option value="去冰">去冰</option>
-            </select>
-          </div>
-        <div class="form-group col-xs-12">
-          <label for="pwd">姓名</label>
-          <input type="text" class="form-control" id="name">
-        </div>
-        <div class="form-group col-xs-12">
-          <button type="button" id="sendOrder" class="btn btn-primary col-xs-12">送出訂單</button>
-        </div>
-        <!-- <div contenteditable="col-xs-12 text-center">
+      <div class="form-group col-xs-12">
+        <label for="pwd">餐點/尺寸</label>
+        <input type="text" class="form-control" id="order" placeholder="黃金烏龍/L">
+      </div>
+      <div class="form-group col-xs-12">
+        <label for="pwd">價格</label>
+        <input type="text" class="form-control" id="price">
+      </div>
+      <div class="form-group col-xs-12">
+        <label for="pwd">請選擇甜度</label>
+        <select name="number" id="sugar" class="select form-control" data-name="甜度>
+            <option style=" display:none" value=""></option>
+          <option value="">請選擇甜度</option>
+          <option value="全糖">全糖</option>
+          <option value="半糖">半糖</option>
+          <option value="微糖">微糖</option>
+          <option value="無糖">無糖</option>
+        </select>
+      </div>
+      <div class="form-group col-xs-12">
+        <label for="pwd">請選擇冰塊</label>
+        <select name="number" id="ice" class="select form-control" data-name="冰塊>
+              <option style=" display:none" value=""></option>
+          <option value="">請選擇冰塊</option>
+          <option value="正常冰">正常冰</option>
+          <option value="少冰">少冰</option>
+          <option value="微冰">微冰</option>
+          <option value="去冰">去冰</option>
+        </select>
+      </div>
+      <div class="form-group col-xs-12">
+        <label for="pwd">姓名</label>
+        <input type="text" class="form-control" id="name">
+      </div>
+      <div class="form-group col-xs-12">
+        <button type="button" id="sendOrder" class="btn btn-primary col-xs-12">送出訂單</button>
+      </div>
+      <!-- <div contenteditable="col-xs-12 text-center">
             <a href="https://docs.google.com/spreadsheets/d/1f010xDoXjDq5jQ6_L0FKqcaC2OVvkvNOv0Bx1yBprGQ/edit#gid=0" 
             target="_blank">google表格連結</a></div> -->
-        <div class="col-xs-12 text-center"><a href="./checkorder.html">訂單查詢</a></div>    
-        <div class="col-xs-12 text-center"><a target="_blank" href="https://docs.google.com/spreadsheets/d/1f010xDoXjDq5jQ6_L0FKqcaC2OVvkvNOv0Bx1yBprGQ/edit#gid=0">google試算表</a></div>
+      <div class="col-xs-12 text-center"><a href="./checkorder.html">訂單查詢</a></div>
+      <div class="col-xs-12 text-center"><a target="_blank"
+          href="https://docs.google.com/spreadsheets/d/1f010xDoXjDq5jQ6_L0FKqcaC2OVvkvNOv0Bx1yBprGQ/edit#gid=0">google試算表</a>
       </div>
     </div>
   </div>
-<!--<div id="footer">製作 by <a href="https://ianchuu.com" target="_blank">Ian Chu.</a></div>-->
+  </div>
+  <!--<div id="footer">製作 by <a href="https://ianchuu.com" target="_blank">Ian Chu.</a></div>-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <!-- Bootstrap core JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-  <script type="text/javascript" src="https://cdn.wootric.com/wootric-sdk.js"></script> 
+  <script type="text/javascript" src="https://cdn.wootric.com/wootric-sdk.js"></script>
 
   <script type="text/javascript">
     wootric_survey_immediately = true;
     window.wootric_no_surveyed_cookie = true;
     window.wootricSettings = {
-      email:'chia.yang.hyweb@gmail.com',
+      email: 'chia.yang.hyweb@gmail.com',
       created_at: 1234567890,  //Math.round((new Date()).getTime() / 1000),
       account_token: 'NPS-e29606d5',
       language: 'CN_T',
@@ -126,16 +134,16 @@
 
     window.customMessages = {
       followup_questions_list: {
-          detractor_question: "可以告訴我怎麼選這麼低分嗎?",  //選1~2分標題
-          passive_question: "可以告訴我怎麼選普普的分數嗎?",      //選3分標題
-          promoter_question: "感謝您高抬貴手"     //選4~5分標題
+        detractor_question: "可以告訴我怎麼選這麼低分嗎?",  //選1~2分標題
+        passive_question: "可以告訴我怎麼選普普的分數嗎?",      //選3分標題
+        promoter_question: "感謝您高抬貴手喔"     //選4~5分標題
       },
       placeholder_texts_list: {
         detractor_text: "不要填太難聽的內容喔",//選1~2分浮水印
         passive_text: "普通評論",    //選3分浮水印
         promoter_text: "感謝您!"   //選4~5分浮水印
       }
-  };
+    };
     console.log('wootricSettings:', window['wootricSettings']);
 
 
@@ -144,12 +152,12 @@
   </script>
 
   <script>
-    $(function(){
+    $(function () {
 
 
-        // 監聽 送出訂單 按鈕點擊
-        // 下面這段主要在組合資料，還有擋使用者不填資料不能送出
-        $('#sendOrder').click(function(e){
+      // 監聽 送出訂單 按鈕點擊
+      // 下面這段主要在組合資料，還有擋使用者不填資料不能送出
+      $('#sendOrder').click(function (e) {
         var status = true;
         // 姓名
         var name = $('#name').val();
@@ -157,13 +165,13 @@
         var order = $('#order').val();
         // 價格 先預設0 後面再加上
         var price = 0;
-        $('input').focus(function(){
-          $(this).css('border','');
+        $('input').focus(function () {
+          $(this).css('border', '');
         });
         price = $('#price').val();
         // 處理甜度 跟 冰塊 資料
         var sugarlevel = document.getElementById("sugar").value;
-        
+
         var icelevel = document.getElementById("ice").value;
         /* if ($(this).data('name') == '冰塊'){
         $('.select').each(function(index) {
@@ -175,27 +183,27 @@
 
 
 
-       // $('.select').each(function(index) {
+        // $('.select').each(function(index) {
         //  if($(this).val() !== ''){
-             // order = $(this).val();
-            //order += $(this).data('name') + ' - ' + $(this).val() + '\n';
-            //price += Number($(this).data('price')) * Number($(this).val());
-         // }
+        // order = $(this).val();
+        //order += $(this).data('name') + ' - ' + $(this).val() + '\n';
+        //price += Number($(this).data('price')) * Number($(this).val());
+        // }
         //});
 
         //order = order.substring(0, order.length - 1);
 
         // 擋住不填資料邏輯
-        if(name == ''){
-          $('#name').css('border','1px solid #ff0000');
+        if (name == '') {
+          $('#name').css('border', '1px solid #ff0000');
           status = false;
         }
-        if(price == 0){
-          $('#price').css('border','1px solid #ff0000');
+        if (price == 0) {
+          $('#price').css('border', '1px solid #ff0000');
           status = false;
         }
-        if(order == ''){
-          $('#order').css('border','1px solid #ff0000');
+        if (order == '') {
+          $('#order').css('border', '1px solid #ff0000');
           status = false;
         }
         /*         if(phone == ''){
@@ -207,15 +215,15 @@
           status = false;
         } */
         // 如果 �必填欄位都過了 才會到這邊
-        if(status){
+        if (status) {
           // 增加日期資料
           var currentdate = new Date();
           var filltime = currentdate.getFullYear() + "/"
-                + (currentdate.getMonth() + 1) + "/"
-                + currentdate.getDate() + "  "
-                + currentdate.getHours() + ":"
-                + currentdate.getMinutes() + ":"
-                + currentdate.getSeconds();
+            + (currentdate.getMonth() + 1) + "/"
+            + currentdate.getDate() + "  "
+            + currentdate.getHours() + ":"
+            + currentdate.getMinutes() + ":"
+            + currentdate.getSeconds();
           // 打包 要的資料
           var data = {
             'time': filltime,
@@ -230,7 +238,7 @@
         }
       });
     });
-    function send(data){
+    function send(data) {
       $.ajax({
         // 這邊用get type
         type: "get",
@@ -249,4 +257,5 @@
     }
   </script>
 </body>
+
 </html>
